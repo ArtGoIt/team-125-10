@@ -37,6 +37,67 @@ body {
   color: #fbfbfb;
 }
 
+.box {
+  width: 500px;
+  padding: 200px 0;
+  margin: 0 auto;
+}
+.btn-toggle {
+  appearance: none;
+}
+
+.btn {
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #cccccc;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.btn-icon {
+  position: relative;
+}
+
+.btn-icon,
+.btn-icon::after,
+.btn-icon::before {
+  width: 50px;
+  height: 3px;
+  display: block;
+  background-color: #1b414b;
+}
+
+.btn-icon::after,
+.btn-icon::before {
+  content: "";
+  position: absolute;
+}
+
+.btn-icon::after {
+  top: 10px;
+}
+
+.btn-icon::before {
+  top: -10px;
+}
+
+.btn-toggle:checked + .btn .btn-icon {
+  background-color: transparent;
+}
+
+.btn-toggle:checked + .btn .btn-icon::after {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.btn-toggle:checked + .btn .btn-icon::before {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
 .visually-hidden {
   position: absolute;
   width: 1px;
